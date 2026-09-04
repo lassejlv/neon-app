@@ -2,7 +2,11 @@ import { useEffect, useState } from "react";
 import { authClient } from "#/lib/auth.ts";
 import { getDbUser } from "#/lib/get-user.ts";
 import type { DbUser } from "#/lib/get-user.ts";
-import { Avatar, AvatarFallback, AvatarImage } from "#/components/ui/avatar.tsx";
+import {
+	Avatar,
+	AvatarFallback,
+	AvatarImage,
+} from "#/components/ui/avatar.tsx";
 import { Badge } from "#/components/ui/badge.tsx";
 import {
 	Card,
@@ -62,7 +66,9 @@ export function UserProfile() {
 			.catch((error: unknown) => {
 				if (!cancelled) {
 					setDbError(
-						error instanceof Error ? error.message : "Could not load database row",
+						error instanceof Error
+							? error.message
+							: "Could not load database row",
 					);
 				}
 			})
@@ -97,7 +103,9 @@ export function UserProfile() {
 			<CardHeader>
 				<div className="flex items-start gap-4">
 					<Avatar className="size-12">
-						{user.image ? <AvatarImage alt={user.name} src={user.image} /> : null}
+						{user.image ? (
+							<AvatarImage alt={user.name} src={user.image} />
+						) : null}
 						<AvatarFallback>{initials(user.name || user.email)}</AvatarFallback>
 					</Avatar>
 					<div className="min-w-0">
