@@ -30,10 +30,10 @@ bun install
 bun --bun run dev
 ```
 
-| Variable            | Where it's used              | Notes                                    |
-| ------------------- | ---------------------------- | ---------------------------------------- |
-| `VITE_NEON_AUTH_URL` | Auth client (`src/lib/auth.ts`) | Public; also set under `vars` in `wrangler.jsonc`. |
-| `DATABASE_URL`      | Server function (`src/lib/get-user.ts`) | Secret — server-side only, never `VITE_` prefixed. |
+| Variable             | Where it's used                         | Notes                                              |
+| -------------------- | --------------------------------------- | -------------------------------------------------- |
+| `VITE_NEON_AUTH_URL` | Auth client (`src/lib/auth.ts`)         | Public; also set under `vars` in `wrangler.jsonc`. |
+| `DATABASE_URL`       | Server function (`src/lib/get-user.ts`) | Secret — server-side only, never `VITE_` prefixed. |
 
 `DATABASE_URL` must be visible to the Worker runtime (e.g. `.dev.vars` for local
 dev, a secret/var on the deployed Worker). The app throws a clear error at
@@ -41,17 +41,17 @@ startup when a variable is missing.
 
 ## Scripts
 
-| Command                | What it does                              |
-| ---------------------- | ----------------------------------------- |
-| `bun --bun run dev`    | Start the dev server on port 3000         |
-| `bun --bun run build`  | Production build                          |
-| `bun --bun run preview`| Preview the production build locally      |
-| `bun --bun run deploy` | Build and deploy to Cloudflare Workers    |
+| Command                    | What it does                           |
+| -------------------------- | -------------------------------------- |
+| `bun --bun run dev`        | Start the dev server on port 3000      |
+| `bun --bun run build`      | Production build                       |
+| `bun --bun run preview`    | Preview the production build locally   |
+| `bun --bun run deploy`     | Build and deploy to Cloudflare Workers |
 | `bun --bun run cf-typegen` | Regenerate `worker-configuration.d.ts` |
-| `bun --bun run test`   | Run the Vitest suite                      |
-| `bun --bun run lint`   | Lint with Oxlint                          |
-| `bun --bun run format` | Format with Oxfmt                         |
-| `bun --bun run check`  | Lint + format check                       |
+| `bun --bun run test`       | Run the Vitest suite                   |
+| `bun --bun run lint`       | Lint with Oxlint                       |
+| `bun --bun run format`     | Format with Oxfmt                      |
+| `bun --bun run check`      | Lint + format check                    |
 
 ## How it works
 
