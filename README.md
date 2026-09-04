@@ -18,6 +18,8 @@ Sign up with email or Google, get a session cookie, and see your live
   `wrangler`.
 - **UI kit** — Tailwind CSS v4 plus a full set of Base UI components in
   `src/components/ui`.
+- **Organizations** — create orgs, switch between them, and invite/manage
+  members with roles, powered by the Neon Auth organization plugin.
 
 ## Getting started
 
@@ -65,6 +67,19 @@ startup when a variable is missing.
   `neon_auth.user` row with `neon(DATABASE_URL)` — all DB access stays
   server-side. `src/components/user-profile.tsx` shows the session next to the
   database row.
+
+## Organizations
+
+- `src/routes/organizations.tsx` lists your organizations, creates new ones
+  (`authClient.organization.create`), and switches the active organization
+  (`authClient.organization.setActive`).
+- `src/routes/organization.$pathname.tsx` renders `OrganizationView`
+  (`settings`, `members`, `teams`, `api-keys` views) for inviting members,
+  changing roles, and cancelling invitations.
+- Organizations are enabled on the provider in
+  `src/components/auth-provider.tsx` (`organization={{}}`). If organization
+  calls fail, enable the organization feature in your Neon Auth project
+  settings.
 
 ## Project structure
 

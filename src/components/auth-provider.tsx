@@ -44,6 +44,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 			onSessionChange={() => {
 				void router.invalidate();
 			}}
+			organization={{}}
 			redirectTo="/"
 			replace={(href) => {
 				router.history.replace(href);

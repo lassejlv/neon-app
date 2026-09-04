@@ -40,6 +40,9 @@ export function SiteHeader() {
 						</Button>
 					</SignedOut>
 					<SignedIn>
+						<Button render={<Link to="/organizations" />} variant="ghost">
+							Organizations
+						</Button>
 						<UserButton size="icon" />
 					</SignedIn>
 				</div>
