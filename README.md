@@ -50,7 +50,7 @@ startup when a variable is missing.
 | `bun --bun run cf-typegen` | Regenerate `worker-configuration.d.ts` |
 | `bun --bun run test`       | Run the Vitest suite                   |
 | `bun --bun run lint`       | Lint with Oxlint                       |
-| `bun --bun run format`     | Format with Oxfmt                      |
+| `bun --bun run fmt`        | Format with Oxfmt                      |
 | `bun --bun run check`      | Lint + format check                    |
 
 ## How it works
